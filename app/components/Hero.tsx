@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { roles } from "../data/roles";
 
 export default function Hero() {
@@ -8,7 +9,11 @@ export default function Hero() {
   const activeRole = roles.find((r) => r.id === activeId)!;
 
   return (
-    <section className={activeRole.theme + " text-paper"}>
+    <motion.section
+      animate={{ backgroundColor: activeRole.hex }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="text-paper"
+    >
       <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center">
         <h1 className="font-fraunces text-4xl sm:text-6xl mb-6">
           Apanka Ayebadek David
@@ -54,6 +59,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
