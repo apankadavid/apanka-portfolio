@@ -12,7 +12,7 @@ export const roles: Role[] = [
     label: "Data & Analytics",
     headline: "I turn raw numbers into decisions.",
     description:
-      "I clean, analyze, and visualize data to help people see what's actually happening in their business or research — not just what they assume is happening.",
+      "I clean, analyze, and visualize data to help people see what's actually happening in their business or research-not just what they assume is happening.",
     skills: ["Excel", "SQL", "Python", "Data Visualization"],
   },
   {
@@ -20,7 +20,7 @@ export const roles: Role[] = [
     label: "Full-Stack Development",
     headline: "I build the systems that run behind the scenes.",
     description:
-      "From database design to deployment, I build real, working web applications — like Gillionaire Decor, a live business platform with authentication, a database, and real client data flowing through it.",
+      "From database design to deployment, I build real, working web applications-like Gillionaire Decor, a live business platform with authentication, a database, and real client data flowing through it.",
     skills: ["Next.js", "React", "TypeScript", "PostgreSQL"],
   },
   {

@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import { roles } from "../data/roles";
 
 export default function Hero() {
-  const activeRole = roles[1]; // Full-Stack Development, as a sensible default
+  const [activeId, setActiveId] = useState(roles[1].id);
+  const activeRole = roles.find((r) => r.id === activeId)!;
 
   return (
     <section className="bg-deep-green text-paper">
@@ -15,34 +19,39 @@ export default function Hero() {
           digital solutions.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-10">
+        <div role="tablist" aria-label="Professional disciplines" className="flex flex-wrap justify-center gap-3 mb-10">
           {roles.map((role) => (
-            <span
+            <button
               key={role.id}
-              className={`rounded-full px-5 py-2 text-sm font-medium ${
-                role.id === activeRole.id
+              role="tab"
+              aria-selected={role.id === activeId}
+              onClick={() => setActiveId(role.id)}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+                role.id === activeId
                   ? "bg-cream text-deep-green"
-                  : "bg-paper/10 text-paper/80"
+                  : "bg-paper/10 text-paper/80 hover:bg-paper/20"
               }`}
             >
               {role.label}
-            </span>
+            </button>
           ))}
         </div>
 
-        <h2 className="font-fraunces text-2xl sm:text-3xl mb-4">
-          {activeRole.headline}
-        </h2>
-        <p className="text-paper/80 max-w-xl mx-auto mb-8">
-          {activeRole.description}
-        </p>
+        <div role="tabpanel" className="min-h-[220px]">
+          <h2 className="font-fraunces text-2xl sm:text-3xl mb-4">
+            {activeRole.headline}
+          </h2>
+          <p className="text-paper/80 max-w-xl mx-auto mb-8">
+            {activeRole.description}
+          </p>
 
-        <div className="flex flex-wrap justify-center gap-2">
-          {activeRole.skills.map((skill) => (
-            <span key={skill} className="text-xs uppercase tracking-wide text-cream/80">
-              {skill}
-            </span>
-          ))}
+          <div className="flex flex-wrap justify-center gap-2">
+            {activeRole.skills.map((skill) => (
+              <span key={skill} className="text-xs uppercase tracking-wide text-cream/80">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
