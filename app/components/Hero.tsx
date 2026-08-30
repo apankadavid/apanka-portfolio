@@ -8,7 +8,7 @@ export default function Hero() {
   const activeRole = roles.find((r) => r.id === activeId)!;
 
   return (
-    <section className="bg-deep-green text-paper">
+    <section className={activeRole.theme + " text-paper"}>
       <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center">
         <h1 className="font-fraunces text-4xl sm:text-6xl mb-6">
           Apanka Ayebadek David
