@@ -1,19 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { roles } from "../data/roles";
 
 export default function Hero() {
   const [activeId, setActiveId] = useState(roles[1].id);
   const activeRole = roles.find((r) => r.id === activeId)!;
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.section
-      animate={{ backgroundColor: activeRole.hex }}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="text-paper"
-    >
+        animate={{ backgroundColor: activeRole.hex }}
+        transition={{
+            duration: shouldReduceMotion ? 0 : 0.5,
+            ease: "easeInOut",
+        }}
+        className="text-paper"
+        >
       <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center">
         <h1 className="font-fraunces text-4xl sm:text-6xl mb-6">
           Apanka Ayebadek David
