@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -27,7 +29,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-manrope bg-[#F7F5EF] text-[#0A1210]">
-        {children}
+        <Header />
+        <div className="flex-1">{children}</div>
+        <Footer />  
       </body>
     </html>
   );
