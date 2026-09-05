@@ -9,6 +9,7 @@ const NAV = [
   { href: "/projects", label: "Projects" },
   { href: "/services", label: "Services" },
   { href: "/experience", label: "Experience" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -65,7 +66,7 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-cream text-deep-green px-5 py-3 text-center text-sm font-semibold"
+            className="mt-2 rounded-lg bg-cream text-deep-green px-5 py-3 text-center text-sm font-semibold"
           >
             Let&apos;s Work Together
           </Link>
