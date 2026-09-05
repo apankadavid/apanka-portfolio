@@ -25,10 +25,13 @@ export default function Footer() {
           <p className="text-sm text-paper/80">apankadavid123@gmail.com</p>
         </div>
       </div>
-
       <div className="border-t border-paper/10">
-        <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-paper/60 text-center">
-          &copy; {new Date().getFullYear()} Apanka Ayebadek David. Built with Next.js.
+        <div className="mx-auto max-w-6xl px-6 py-5 flex flex-col sm:flex-row sm:justify-between gap-2 text-xs text-paper/60 text-center sm:text-left">
+          <p>&copy; {new Date().getFullYear()} Apanka Ayebadek David. Built with Next.js.</p>
+          <div className="flex gap-4 justify-center">
+            <a href="/privacy" className="hover:text-cream">Privacy Policy</a>
+            <a href="/terms" className="hover:text-cream">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>
