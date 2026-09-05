@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ProjectsList from "../components/ProjectsList";
 
 export default function Projects() {
@@ -8,7 +9,9 @@ export default function Projects() {
         Real, working systems across data, development, marketing, and
         agricultural technology.
       </p>
-      <ProjectsList />
+      <Suspense fallback={<p className="text-center">Loading projects...</p>}>
+        <ProjectsList />
+      </Suspense>
     </main>
   );
 }
