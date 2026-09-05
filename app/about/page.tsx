@@ -45,7 +45,7 @@ export default function About() {
           Where I Actually Stand
         </h2>
         <p className="text-center text-ink/70 max-w-xl mx-auto mb-12">
-          I believe in being honest about skill level - here&apos;s a clear
+          I believe in being honest about skill level: here&apos;s a clear
           breakdown across each area.
         </p>
 
