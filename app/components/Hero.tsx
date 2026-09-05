@@ -35,7 +35,7 @@ export default function Hero() {
               role="tab"
               aria-selected={role.id === activeId}
               onClick={() => setActiveId(role.id)}
-              className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+              className={`rounded-lg px-5 py-2 text-sm font-medium transition-colors ${
                 role.id === activeId
                   ? "bg-cream text-deep-green"
                   : "bg-paper/10 text-paper/80 hover:bg-paper/20"

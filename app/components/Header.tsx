@@ -33,7 +33,7 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="rounded-full bg-cream text-deep-green px-5 py-2 text-sm font-semibold hover:bg-cream/90 transition-colors"
+            className="rounded-lg bg-cream text-deep-green px-5 py-2 text-sm font-semibold hover:bg-cream/90 transition-colors"
           >
             Let&apos;s Work Together
           </Link>

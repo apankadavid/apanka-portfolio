@@ -44,7 +44,7 @@ export const roles: Role[] = [
     label: "AgricTech",
     headline: "Where my technical foundation actually started.",
     description:
-      "My background in Agricultural Engineering, with a focus on Irrigation and Drainage Systems, taught me to think in systems — inputs, constraints, outputs. Everything else I do builds on that foundation.",
+      "My background in Agricultural Engineering, with a focus on Irrigation and Drainage Systems, taught me to think in systems: inputs, constraints, outputs. Everything else I do builds on that foundation.",
     skills: ["Irrigation Systems", "Agricultural Data", "Sustainable Design", "Research"],
     theme: "bg-[#0F3D33]" , // agritech — deepest, most "earthy" green
     hex: "#0F3D33"
