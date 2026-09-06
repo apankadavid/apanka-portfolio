@@ -27,7 +27,7 @@ export default function Hero() {
                 alt=""
                 fill
                 priority
-                className="object-cover"
+                className="object-cover object-[55%_top] sm:object-center"
               />
               <div className="absolute inset-0 bg-[#013E37]/80" />
             </motion.div>
