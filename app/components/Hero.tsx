@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import Image from "next/image";
 import { roles } from "../data/roles";
 
 export default function Hero() {
@@ -10,15 +11,30 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <motion.section
-        animate={{ backgroundColor: activeRole.hex }}
-        transition={{
-            duration: shouldReduceMotion ? 0 : 0.5,
-            ease: "easeInOut",
-        }}
-        className="text-paper"
-        >
-      <div className="mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center">
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[#013E37]">
+          {roles.map((role) => (
+            <motion.div
+              key={role.id}
+              initial={false}
+              animate={{ opacity: role.id === activeId ? 1 : 0 }}
+              transition={{ duration: shouldReduceMotion ? 0 : 0.5 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={role.image}
+                alt=""
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[#013E37]/80" />
+            </motion.div>
+          ))}
+       </div>
+      </div>
+      <div className="relative mx-auto max-w-4xl px-6 py-24 sm:py-32 text-center text-paper">
         <h1 className="font-fraunces text-4xl sm:text-6xl mb-6">
           Apanka Ayebadek David
         </h1>
@@ -63,6 +79,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
