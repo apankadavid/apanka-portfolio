@@ -1,4 +1,5 @@
 import { journey, skillCategories } from "../data/about";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -14,6 +15,35 @@ export default function About() {
             tools in front of the people who need them. Gillionaire Decor is
             where all four came together on a real project.
         </p>
+        </div>
+      </section>
+      <section className="max-w-3xl mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
+          <div className="relative w-full h-72 sm:h-80 rounded-lg overflow-hidden">
+            <Image src="/profile.png" alt="Apanka Ayebadek David" fill className="object-cover object-top" />
+          </div>
+
+          <div className="bg-white rounded-lg p-6 shadow-sm">
+            <h3 className="font-fraunces text-xl mb-4">Quick Facts</h3>
+            <dl className="flex flex-col gap-3 text-sm">
+              <div className="flex justify-between border-b border-stone/10 pb-2">
+                <dt className="text-stone">Name</dt>
+                <dd className="font-medium">Apanka Ayebadek David</dd>
+              </div>
+              <div className="flex justify-between border-b border-stone/10 pb-2">
+                <dt className="text-stone">Based in</dt>
+                <dd className="font-medium">Accra, Ghana</dd>
+              </div>
+              <div className="flex justify-between border-b border-stone/10 pb-2">
+                <dt className="text-stone">Education</dt>
+                <dd className="font-medium">Agricultural Engineering</dd>
+              </div>
+              <div className="flex justify-between">
+                <dt className="text-stone">Focus Areas</dt>
+                <dd className="font-medium text-right">Data, Development, AgricTech</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </section>
 
