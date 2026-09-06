@@ -1,3 +1,5 @@
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+
 export default function Footer() {
   return (
     <footer className="bg-deep-green text-paper mt-24">
@@ -8,8 +10,38 @@ export default function Footer() {
             Connecting agriculture, data, and technology to build practical
             digital solutions.
           </p>
-        </div>
+          <div className="mt-4 flex gap-4">
+            <a
+              href="https://www.linkedin.com/in/apanka-david-600a9a218"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-paper/70 hover:text-cream transition-colors"
+            >
+              <FaLinkedin size={20} />
+            </a>
 
+            <a
+              href="https://github.com/apankadavid"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-paper/70 hover:text-cream transition-colors"
+            >
+              <FaGithub size={20} />
+            </a>
+
+            <a
+              href="https://www.instagram.com/apankaadavid"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-paper/70 hover:text-cream transition-colors"
+            >
+              <FaInstagram size={20} />
+            </a>
+          </div>
+        </div>
         <div>
           <h3 className="text-xs uppercase tracking-widest text-cream mb-4">Navigate</h3>
           <ul className="space-y-2 text-sm text-paper/80">
