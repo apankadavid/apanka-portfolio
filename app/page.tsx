@@ -19,8 +19,12 @@ export default function Home() {
               href={`/projects/${project.slug}`}
               className="block bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow"
             >
-              <div className="relative w-full h-56">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
+              <div className="relative w-full h-56 bg-deep-green flex items-center justify-center">
+                {project.image ? (
+                  <Image src={project.image} alt={project.title} fill className="object-cover" />
+                ) : (
+                  <span className="text-paper/60 text-sm">Video documentation</span>
+                )}
               </div>
               <div className="p-6">
                 <p className="text-xs uppercase tracking-widest text-stone mb-2">
