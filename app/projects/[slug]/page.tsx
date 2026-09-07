@@ -22,7 +22,22 @@ export default async function ProjectCaseStudy({
       <h1 className="font-fraunces text-4xl mb-6">{project.title}</h1>
 
       <div className="relative w-full h-72 sm:h-96 rounded-lg overflow-hidden mb-10">
-        <Image src={project.image} alt={project.title} fill className="object-cover" />
+        {project.image ? (
+          <div className="relative w-full h-72 sm:h-96 rounded-lg overflow-hidden mb-10">
+            <Image src={project.image} alt={project.title} fill className="object-cover" />
+          </div>
+        ) : project.videos ? (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            {project.videos.map((video) => (
+              <div key={video.src} className="bg-white rounded-lg shadow-sm overflow-hidden">
+                <video controls preload="metadata" className="w-full h-48 object-cover">
+                  <source src={video.src} type="video/mp4" />
+                </video>
+                <p className="p-3 text-xs font-medium text-ink/70">{video.caption}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
 
       <div className="flex flex-wrap gap-2 mb-12">
