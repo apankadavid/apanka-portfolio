@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { projects } from "./data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://apanka-portfolio.vercel.app";
+  const baseUrl = "https://apankdavid.com";
 
   const routes = ["", "/about", "/projects", "/services", "/experience", "/contact"];
 

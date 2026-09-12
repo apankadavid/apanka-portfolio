@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://apanka-portfolio.vercel.app/sitemap.xml",
+    sitemap: "https://apankdavid.com/sitemap.xml",
   };
 }

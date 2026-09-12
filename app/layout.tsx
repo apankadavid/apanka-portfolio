@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Apanka Ayebadek David",
     description: "Data, Development, Marketing & AgricTech — connected by real, working projects.",
-    url: "https://apanka-portfolio.vercel.app",
+    url: "https://apankdavid.com",
     siteName: "Apanka Ayebadek David",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
