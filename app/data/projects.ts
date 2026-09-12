@@ -55,7 +55,7 @@ export const projects: Project[] = [
   categories: ["Data & Analytics"],
   summary:
     "An analysis of 152,445 recorded road accidents, identifying patterns in timing, location, and severity to produce actionable safety recommendations.",
-  image: "/projects/road-accidents.png",
+  image: "/projects/road-accidents.jpg",
   technologies: ["Power BI", "Data Visualization", "Statistical Analysis"],
   year: "2026",
   role: "Data Analyst",
