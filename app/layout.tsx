@@ -3,6 +3,7 @@ import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Script from "next/script";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -44,6 +45,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col font-manrope bg-[#F7F5EF] text-[#0A1210]">
         <Header />
         <div className="flex-1">{children}</div>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BXJ8J49T3Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BXJ8J49T3Y');
+          `}
+        </Script>
         <Footer />  
       </body>
     </html>
