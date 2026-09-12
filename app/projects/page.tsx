@@ -1,6 +1,11 @@
 import { Suspense } from "react";
 import ProjectsList from "../components/ProjectsList";
 
+export const metadata = {
+  title: "Projects | Apanka Ayebadek David",
+  description: "Real, working systems across data, development, marketing, and agricultural technology.",
+};
+
 export default function Projects() {
   return (
     <main className="max-w-5xl mx-auto py-20 px-6">

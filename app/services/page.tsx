@@ -1,5 +1,10 @@
 import { services } from "../data/services";
 
+export const metadata = {
+  title: "Services | Apanka Ayebadek David",
+  description: "Practical, outcome-focused work across development, data, and agricultural technology.",
+};
+
 export default function Services() {
   return (
     <main>

@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Not Found",
+  description: "The page you're looking for doesn't exist.",
+};
+
 export default function NotFound() {
   return (
     <main className="max-w-xl mx-auto py-24 px-6 text-center">

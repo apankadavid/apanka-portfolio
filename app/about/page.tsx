@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { journey, skillCategories } from "../data/about";
 
+export const metadata = {
+  title: "About | Apanka Ayebadek David",
+  description: "Agricultural engineering, data analysis, full-stack development, and digital marketing — connected by one systems-thinking approach.",
+};
+
 export default function About() {
   return (
     <main>

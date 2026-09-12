@@ -1,5 +1,10 @@
 import { education, experience } from "../data/experience";
 
+export const metadata = {
+  title: "Experience | Apanka Ayebadek David",
+  description: "Education, work history, and real projects in data, development, and agriculture.",
+};
+
 function EntryList({ entries }: { entries: typeof education }) {
   return (
     <div className="flex flex-col gap-8">
