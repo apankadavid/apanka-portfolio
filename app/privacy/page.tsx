@@ -14,8 +14,11 @@ export default function Privacy() {
           not stored in any database, sold, or shared with any other party.
         </p>
         <p>
-          This site does not use tracking cookies or third-party advertising
-          scripts.
+          With your consent, this site uses a Google Analytics cookie to understand
+          visitor traffic (pages viewed, general location, device type). You can
+          decline this at any time via the cookie banner. No personal data is sold
+          or shared with third parties beyond Google&apos;s standard analytics
+          processing.
         </p>
         <p>
           If you have any questions about this policy, you can reach me at{" "}
