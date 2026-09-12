@@ -19,7 +19,20 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Apanka Ayebadek David | Data, Development & AgricTech",
   description:
-    "I connect agriculture, data, and technology to build practical digital solutions-proven through real, working systems.",
+    "I connect agriculture, data, and technology to build practical digital solutions — proven through real, working systems.",
+  openGraph: {
+    title: "Apanka Ayebadek David",
+    description: "Data, Development, Marketing & AgricTech — connected by real, working projects.",
+    url: "https://apanka-portfolio.vercel.app",
+    siteName: "Apanka Ayebadek David",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apanka Ayebadek David",
+    description: "Data, Development, Marketing & AgricTech — connected by real, working projects.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
