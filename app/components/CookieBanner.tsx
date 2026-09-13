@@ -1,22 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Script from "next/script";
 
 export default function CookieBanner() {
-  const [consent, setConsent] = useState<"pending" | "accepted" | "declined">(() => {
-    if (typeof window === "undefined") {
-      return "pending";
-    }
+  const [mounted, setMounted] = useState(false);
+  const [consent, setConsent] = useState<"pending" | "accepted" | "declined">("pending");
 
+  useEffect(() => {
+    setMounted(true);
     const stored = window.localStorage.getItem("cookie-consent");
-    return stored === "accepted" || stored === "declined" ? stored : "pending";
-  });
+    if (stored === "accepted" || stored === "declined") {
+      setConsent(stored);
+    }
+  }, []);
 
   function handleChoice(choice: "accepted" | "declined") {
     window.localStorage.setItem("cookie-consent", choice);
     setConsent(choice);
   }
+
+  if (!mounted) return null;
 
   return (
     <>
