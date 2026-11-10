@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { roles } from "../data/roles";
 import { skillIcons } from "../data/skillIcons";
+import { projects, type Project } from "../data/projects";
 
 const socials = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/apanka-david-600a9a218", Icon: FaLinkedin },
@@ -15,10 +16,45 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/apankaadavid", Icon: FaInstagram },
 ];
 
+const shortLabels: Record<string, string> = {
+  data: "Data & Analytics",
+  development: "Development",
+  marketing: "Marketing",
+  agritech: "AgricTech",
+};
+
+function FeaturedCard({ project, className = "" }: { project: Project; className?: string }) {
+  return (
+    <Link
+      href={`/projects/${project.slug}`}
+      className={`flex items-center gap-3 rounded-lg border border-cream/30 bg-[#013E37] p-3 text-left transition-colors hover:border-cream/60 ${className}`}
+    >
+      {project.image && (
+        <span className="relative h-14 w-20 shrink-0 overflow-hidden rounded-md">
+          <Image src={project.image} alt="" fill sizes="80px" className="object-cover" />
+        </span>
+      )}
+      <span className="min-w-0">
+        <span className="block text-[11px] uppercase tracking-widest text-cream/80">
+          Featured project
+        </span>
+        <span className="block text-sm font-semibold text-paper">{project.title}</span>
+        <span className="mt-1 inline-flex items-center gap-1 text-xs font-semibold text-cream">
+          View project
+          <ArrowRight className="h-3 w-3" aria-hidden="true" />
+        </span>
+      </span>
+    </Link>
+  );
+}
+
 export default function Hero() {
   const [activeId, setActiveId] = useState(roles[1].id);
   const activeRole = roles.find((r) => r.id === activeId)!;
   const shouldReduceMotion = useReducedMotion();
+  const featuredProject = activeRole.featuredProjectSlug
+  ? projects.find((p) => p.slug === activeRole.featuredProjectSlug)
+  : undefined;
 
   return (
     <section className="relative overflow-hidden">
@@ -67,21 +103,22 @@ export default function Hero() {
             <div
               role="tablist"
               aria-label="Professional disciplines"
-              className="flex flex-wrap justify-center sm:justify-start gap-3 mb-8"
+              className="grid grid-cols-2 sm:flex sm:w-fit gap-1 rounded-lg border border-cream/30 bg-paper/5 p-1 mb-8"
             >
               {roles.map((role) => (
                 <button
                   key={role.id}
                   role="tab"
                   aria-selected={role.id === activeId}
+                  aria-label={role.label}
                   onClick={() => setActiveId(role.id)}
-                  className={`rounded-lg px-5 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-md px-4 py-2 text-sm font-medium transition-colors ${
                     role.id === activeId
                       ? "bg-cream text-deep-green"
-                      : "bg-paper/10 text-paper/80 hover:bg-paper/20"
+                      : "text-paper/80 hover:bg-paper/10"
                   }`}
                 >
-                  {role.label}
+                  {shortLabels[role.id] ?? role.label}
                 </button>
               ))}
             </div>
@@ -146,6 +183,9 @@ export default function Hero() {
                 </li>
               ))}
             </ul>
+            {featuredProject && (
+              <FeaturedCard project={featuredProject} className="mt-8 sm:hidden max-w-sm mx-auto" />
+            )}
           </div>
 
           <div className="hidden sm:block relative self-stretch -mr-6 sm:-mb-14">
@@ -166,6 +206,12 @@ export default function Hero() {
                 priority
               />
             </div>
+            {featuredProject && (
+              <FeaturedCard
+                project={featuredProject}
+                className="absolute bottom-16 right-6 z-10 w-72"
+              />
+            )}
           </div>
         </div>
       </div>

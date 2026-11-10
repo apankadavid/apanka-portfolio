@@ -7,6 +7,7 @@ export type Role = {
   theme: string;
   hex: string;
   image: string;
+  featuredProjectSlug?: string;
 };
 
 export const roles: Role[] = [
@@ -19,7 +20,8 @@ export const roles: Role[] = [
     skills: ["Excel", "SQL", "Python", "Data Visualization"],
     theme: "bg-[#0B2622]",  // data — slightly cooler, darker
     hex: "#0B2622",
-    image: "/hero-data.jpg"        // data
+    image: "/hero-data.jpg",       // data
+    featuredProjectSlug: "road-accident-analysis",
   },
   {
     id: "development",
@@ -30,7 +32,8 @@ export const roles: Role[] = [
     skills: ["Next.js", "React", "TypeScript", "PostgreSQL"],
     theme: "bg-[#013E37]" , // development — your core brand green
     hex: "#013E37",
-    image: "/hero-development.jpg" // development
+    image: "/hero-development.jpg",
+    featuredProjectSlug: "gillionaire-decor", // development
   },
   {
     id: "marketing",
@@ -52,6 +55,7 @@ export const roles: Role[] = [
     skills: ["Irrigation Systems", "Agricultural Data", "Sustainable Design", "Research"],
     theme: "bg-[#0F3D33]" , // agritech — deepest, most "earthy" green
     hex: "#0F3D33",
-    image: "/hero-agritech.jpg"    // agritech
+    image: "/hero-agritech.jpg",
+    featuredProjectSlug: "goshen-porche-field-operations",    // agritech
   },
 ];
