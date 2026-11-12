@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -21,8 +22,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-deep-green text-paper shadow-sm">
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-fraunces text-xl tracking-tight">
-          Apanka David
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/ad-mark.png" alt="" width={32} height={32} className="rounded-md" />
+          <span className="font-fraunces text-lg tracking-wide uppercase">Apanka David</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Primary">
@@ -45,9 +47,10 @@ export default function Header() {
           })}
           <Link
             href="/contact"
-            className="ml-4 rounded-lg bg-cream text-deep-green px-5 py-2 text-sm font-semibold hover:bg-cream/90 transition-colors"
+            className="ml-4 inline-flex items-center gap-2 rounded-lg bg-cream text-deep-green px-5 py-2 text-sm font-semibold hover:bg-cream/90 transition-colors"
           >
             Let&apos;s Work Together
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </nav>
 
@@ -63,7 +66,10 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="lg:hidden bg-deep-green px-6 pb-6 flex flex-col gap-1 border-t border-paper/10 pt-4" aria-label="Mobile">
+        <nav
+          className="lg:hidden bg-deep-green px-6 pb-6 flex flex-col gap-1 border-t border-paper/10 pt-4"
+          aria-label="Mobile"
+        >
           {NAV.map((n) => {
             const isActive = pathname === n.href;
             return (
@@ -82,9 +88,10 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-lg bg-cream text-deep-green px-5 py-3 text-center text-sm font-semibold"
+            className="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-cream text-deep-green px-5 py-3 text-sm font-semibold"
           >
             Let&apos;s Work Together
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </nav>
       )}

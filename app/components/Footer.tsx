@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-green text-paper mt-24">
+    <footer className="bg-deep-green text-paper">
       <div className="mx-auto max-w-6xl px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-10">
         <div>
           <p className="font-fraunces text-lg mb-2">Apanka Ayebadek David</p>

@@ -42,7 +42,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-manrope bg-[#F7F5EF] text-[#0A1210]">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-manrope bg-[#F7F5EF] text-[#0A1210]"
+      >
         <Header />
         <div className="flex-1">{children}</div>
         <Footer />
