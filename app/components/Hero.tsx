@@ -139,7 +139,7 @@ export default function Hero() {
                       key={skill}
                       className="inline-flex items-center gap-2 rounded-lg border border-cream/20 bg-paper/5 px-3 py-2 text-sm text-paper/90"
                     >
-                      {Icon && <Icon className="h-4 w-4 text-cream" />}
+                      {Icon && <Icon className="h-4 w-4 text-cream" aria-hidden="true" />}
                       {skill}
                     </li>
                   );
