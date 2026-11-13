@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import FooterBackground from "./FooterBackground";
 
 export default function Footer() {
   return (
-    <footer className="bg-deep-green text-paper">
+    <footer className="relative isolate overflow-hidden bg-deep-green text-paper">
+      <FooterBackground />
       <div className="mx-auto max-w-6xl px-6 py-16 grid grid-cols-1 sm:grid-cols-3 gap-10">
         <div>
           <p className="font-fraunces text-lg mb-2">Apanka Ayebadek David</p>
@@ -60,7 +62,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-paper/10">
-        <div className="mx-auto max-w-6xl px-6 py-5 flex flex-col sm:flex-row sm:justify-between gap-2 text-xs text-paper/60 text-center sm:text-left">
+        <div className="mx-auto max-w-6xl px-6 py-5 flex flex-col sm:flex-row sm:justify-between gap-2 text-xs text-paper/80 text-center sm:text-left">
           <p>&copy; {new Date().getFullYear()} Apanka Ayebadek David. Built with Next.js.</p>
           <div className="flex gap-4 justify-center">
             <Link href="/privacy" className="hover:text-cream">Privacy Policy</Link>
